@@ -55,7 +55,7 @@ class Camera(object):
         dt=time.time()-timeStamp
         fps=1/dt
         fpsReport=.90*fpsReport+.1*fps
-        cv2.putText(frame,str(round(fpsReport,1))+'fps',(0,25),font,.75,(0,255,255,2))
+        cv2.putText(frame,str(round(fpsReport,1))+'fps',(0,25),font,.75,(255,0,0,2))
         #print('fps is:',fps)
         #cv2.imshow('Picture',frame)
         #cv2.moveWindow('Picture',0,0)
