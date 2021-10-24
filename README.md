@@ -53,4 +53,6 @@ $ id -a
 $ ls -l /dev/video0
 $ sudo usermod -a -G video vagrant
 $ id -a
+$ exit 
+and Login again
 ```
