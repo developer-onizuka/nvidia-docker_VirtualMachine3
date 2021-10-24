@@ -17,14 +17,15 @@ $ vagrant up --provider=libvirt
 $ git clone https://github.com/developer-onizuka/nvidia-docker_VirtualMachine3
 $ cd nvidia-docker_VirtualMachine3
 $ ls -trl
-total 60
--rw-r--r-- 1 vagrant vagrant 14190 Oct 16 10:51 train.pkl
--rwxr-xr-x 1 vagrant vagrant  1741 Oct 16 10:51 test.py
--rw-r--r-- 1 vagrant vagrant 10261 Oct 16 10:51 README.md
-drwxrwxr-x 2 vagrant vagrant  4096 Oct 24 03:05 templates
--rwxr-xr-x 1 vagrant vagrant  2242 Oct 24 06:54 camera.py
--rw-r--r-- 1 vagrant vagrant   921 Oct 24 07:01 Dockerfile
--rwxrwxr-x 1 vagrant vagrant   766 Oct 24 07:02 app.py
+total 48
+-rw-rw-r-- 1 onizuka onizuka  4286 Oct 24 19:19 Vagrantfile
+-rw-rw-r-- 1 onizuka onizuka 14190 Oct 24 19:19 train.pkl
+-rwxrwxr-x 1 onizuka onizuka  1741 Oct 24 19:19 test.py
+drwxrwxr-x 2 onizuka onizuka  4096 Oct 24 19:19 templates
+-rw-rw-r-- 1 onizuka onizuka  2467 Oct 24 19:19 README.md
+-rw-rw-r-- 1 onizuka onizuka   921 Oct 24 19:19 Dockerfile
+-rwxrwxr-x 1 onizuka onizuka  2240 Oct 24 19:19 camera.py
+-rwxrwxr-x 1 onizuka onizuka  1087 Oct 24 19:19 app.py
 -rw-r--r-- 1 vagrant vagrant  4286 Oct 24 07:13 Vagrantfile
 
 $ sudo docker build -t face_recognizer:1.0.1 .
