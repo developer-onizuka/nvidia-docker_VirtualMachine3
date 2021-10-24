@@ -1,6 +1,6 @@
 # nvidia-docker_VirtualMachine3
 
-This repository is for creating Streaming server of Web camera with FaceRecogizer below: 
+This repository is what I re-created as Streaming server of Web camera with FaceRecogizer I created before as below: 
 - https://github.com/developer-onizuka/nvidia-docker_VirtualMachine2
 
 What you should do is only "vagrant up --provider=libvirt" in step#0 below, But you can learn all of the steps:
