@@ -33,7 +33,6 @@ $ sudo docker build -t face_recognizer:1.0.1 .
 # 2. Run containerized nvidia driver at Virtual Machine
 ```
 $ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run/nvidia:/run/nvidia:shared -v /var/log:/var/log  nvcr.io/nvidia/driver:470.57.02-ubuntu20.04
-
 $ sudo docker logs -f nvidia-driver
 ```
 
