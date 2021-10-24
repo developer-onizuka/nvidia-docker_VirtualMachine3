@@ -3,7 +3,7 @@
 This repository is for creating Streaming server of Web camera with FaceRecogizer below: 
 - https://github.com/developer-onizuka/nvidia-docker_VirtualMachine2
 
-What you should do is "vagrant up --provider=libvirt", But you can learn all of the steps below:
+What you should do is only "vagrant up --provider=libvirt" in step#0 below, But you can learn all of the steps:
 
 # 0. Vagrant Up at Host Machine
 ```
@@ -38,11 +38,12 @@ $ sudo docker logs -f nvidia-driver
 ```
 
 # 3. Run containerized web Face_recognized streaming server at Virtual Machine
+Access the URL informed by the command below:
 ```
 $ sudo docker run -it --net host -v /tmp/test:/mnt -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/root/.Xauthority --device /dev/video0:/dev/video0:mwr -e DISPLAY=$DISPLAY --gpus all --rm --name="camera" face_recognizer:1.0.1
 ```
 
-# 4. Optional steps
+# X. Optional steps
 If you found "[ WARN:1] global ../modules/videoio/src/cap_v4l.cpp (887) open VIDEOIO(V4L2:/dev/video0): can't open camera by index", You might use followings steps.
 
 https://stackoverflow.com/questions/59371075/opencv-error-cant-open-camera-through-video-capture
