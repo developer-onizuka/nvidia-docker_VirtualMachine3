@@ -28,6 +28,11 @@ drwxrwxr-x 2 onizuka onizuka  4096 Oct 24 19:19 templates
 -rwxrwxr-x 1 onizuka onizuka  1087 Oct 24 19:19 app.py
 -rw-r--r-- 1 vagrant vagrant  4286 Oct 24 07:13 Vagrantfile
 
+$ ls -trl templates/
+total 8
+-rw-rw-r-- 1 onizuka onizuka 271 Oct 24 19:19 stream.html
+-rw-rw-r-- 1 onizuka onizuka 198 Oct 24 19:19 index.html
+
 $ sudo docker build -t face_recognizer:1.0.1 .
 ```
 
