@@ -1,8 +1,18 @@
 # nvidia-docker_VirtualMachine3
 
+This repository is for creating Streaming server of Web camera with FaceRecogizer below: 
 - https://github.com/developer-onizuka/nvidia-docker_VirtualMachine2
 
-# 1. Create docker container image using the Dockerfile attached
+What you should do is "vagrant up --provider=libvirt", But you can learn all of the steps below:
+
+# 0. Vagrant Up at Host Machine
+```
+$ git clone https://github.com/developer-onizuka/nvidia-docker_VirtualMachine3
+$ cd nvidia-docker_VirtualMachine3
+$ vagrant up --provider=libvirt
+```
+
+# 1. Create docker container image using the Dockerfile attached at Virtual Machine
 ```
 $ git clone https://github.com/developer-onizuka/nvidia-docker_VirtualMachine3
 $ cd nvidia-docker_VirtualMachine3
@@ -20,19 +30,19 @@ drwxrwxr-x 2 vagrant vagrant  4096 Oct 24 03:05 templates
 $ sudo docker build -t face_recognizer:1.0.1 .
 ```
 
-# 2. Run containerized nvidia driver
+# 2. Run containerized nvidia driver at Virtual Machine
 ```
 $ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run/nvidia:/run/nvidia:shared -v /var/log:/var/log  nvcr.io/nvidia/driver:470.57.02-ubuntu20.04
 
 $ sudo docker logs -f nvidia-driver
 ```
 
-# 3. Run containerized web Face_recognized streaming server
+# 3. Run containerized web Face_recognized streaming server at Virtual Machine
 ```
 $ sudo docker run -it --net host -v /tmp/test:/mnt -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/root/.Xauthority --device /dev/video0:/dev/video0:mwr -e DISPLAY=$DISPLAY --gpus all --rm --name="camera" face_recognizer:1.0.1
 ```
 
-# 4. Optinal step
+# 4. Optional steps
 If you found "[ WARN:1] global ../modules/videoio/src/cap_v4l.cpp (887) open VIDEOIO(V4L2:/dev/video0): can't open camera by index", You might use followings steps.
 
 https://stackoverflow.com/questions/59371075/opencv-error-cant-open-camera-through-video-capture
