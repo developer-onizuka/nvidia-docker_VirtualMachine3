@@ -80,12 +80,23 @@ Vagrant.configure("2") do |config|
      apt-get update
      apt-get install -y nvidia-docker2
      systemctl restart docker
+     cat <<EOF > /etc/docker/daemon.json
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+    "insecure-registries":["192.168.33.1:5000"]
+}
+EOF
      sed -i 's/^#root/root/' /etc/nvidia-container-runtime/config.toml
      tee /etc/modules-load.d/ipmi.conf <<< "ipmi_msghandler"   && sudo tee /etc/modprobe.d/blacklist-nouveau.conf <<< "blacklist nouveau"   && sudo tee -a /etc/modprobe.d/blacklist-nouveau.conf <<< "options nouveau modeset=0"
      update-initramfs -u
      docker pull nvcr.io/nvidia/driver:470.57.02-ubuntu20.04
      docker pull nvidia/cuda:11.4.1-cudnn8-devel-ubuntu20.04
      git clone https://github.com/developer-onizuka/nvidia-docker_VirtualMachine3.git
-     docker build -t face_recognizer:1.0.1 ./nvidia-docker_VirtualMachine3/
+     #docker build -t face_recognizer:1.0.1 ./nvidia-docker_VirtualMachine3/
    SHELL
 end
