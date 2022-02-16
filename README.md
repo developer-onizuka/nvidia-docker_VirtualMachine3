@@ -42,6 +42,11 @@ $ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run
 $ sudo docker logs -f nvidia-driver
 ```
 
+New Driver (released on 01/20/2022 8:26 AM)
+```
+$ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run/nvidia:/run/nvidia:shared -v /var/log:/var/log  nvcr.io/nvidia/driver:470.82.01-ubuntu20.04
+```
+
 # 3. Run containerized web Face_recognized streaming server at Virtual Machine
 Access the URL informed by the command below:
 ```
