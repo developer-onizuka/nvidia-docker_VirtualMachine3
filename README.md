@@ -16,12 +16,22 @@ If you wanna change images directry from /var/lib/libvirt/images to some another
 ```
 $ mkdir -p /mnt/data
 $ virsh pool-create-as --name data --type dir --target /mnt/data
+$ virsh pool-list
+ Name      State    Autostart
+-------------------------------
+ data      active   no
+ default   active   no
 ```
 
 You also change the Vagrantfile as follow, if you changed the directry above.
 ```
   config.vm.provider "libvirt" do |kvm|
     kvm.storage_pool_name = "data"
+```
+
+You can destroy it if it's not necessary any more.
+```
+$ virsh pool-destroy <pool_name>
 ```
 
 # 1. Create docker container image using the Dockerfile attached at Virtual Machine
