@@ -92,6 +92,8 @@ Press CTRL+C to quit
 ...
 ```
 
+![example.png](https://github.com/developer-onizuka/nvidia-docker_VirtualMachine3/blob/main/example.png)
+
 # X. Optional steps
 If you found "[ WARN:1] global ../modules/videoio/src/cap_v4l.cpp (887) open VIDEOIO(V4L2:/dev/video0): can't open camera by index", You might use followings steps.
 
