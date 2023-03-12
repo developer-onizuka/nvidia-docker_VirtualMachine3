@@ -75,6 +75,23 @@ Access the URL informed by the command below:
 $ sudo docker run -it --net host -v /tmp/test:/mnt -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/root/.Xauthority --device /dev/video0:/dev/video0:mwr -e DISPLAY=$DISPLAY --gpus all --rm --name="camera" face_recognizer:1.0.1
 ```
 
+```
+$ sudo docker run -it --net host -v /tmp/test:/mnt -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/root/.Xauthority --device /dev/video0:/dev/video0:mwr -e DISPLAY=$DISPLAY --gpus all --rm --name="camera" face_recognizer:1.0.1
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.121.243:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 138-385-403
+192.168.121.1 - - [12/Mar/2023 00:34:58] "GET / HTTP/1.1" 200 -
+192.168.121.1 - - [12/Mar/2023 00:34:58] "GET /favicon.ico HTTP/1.1" 500 -
+...
+```
+
 # X. Optional steps
 If you found "[ WARN:1] global ../modules/videoio/src/cap_v4l.cpp (887) open VIDEOIO(V4L2:/dev/video0): can't open camera by index", You might use followings steps.
 
