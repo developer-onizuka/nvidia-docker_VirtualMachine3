@@ -64,14 +64,15 @@ $ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run
 $ sudo docker logs -f nvidia-driver
 ```
 
-New Driver (released on 01/20/2022 8:26 AM)
+New Driver (released on 02/16/2023 10:42 AM)
 ```
-$ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run/nvidia:/run/nvidia:shared -v /var/log:/var/log  nvcr.io/nvidia/driver:470.82.01-ubuntu20.04
+$ sudo docker run --name nvidia-driver -itd --rm --privileged --pid=host -v /run/nvidia:/run/nvidia:shared -v /var/log:/var/log  nvcr.io/nvidia/driver:525.85.12-ubuntu20.04
 ```
 
 # 3. Run containerized web Face_recognized streaming server at Virtual Machine
 Access the URL informed by the command below:
 ```
+$ xhost +
 $ sudo docker run -it --net host -v /tmp/test:/mnt -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/.Xauthority:/root/.Xauthority --device /dev/video0:/dev/video0:mwr -e DISPLAY=$DISPLAY --gpus all --rm --name="camera" face_recognizer:1.0.1
 ```
 
